@@ -1,5 +1,4 @@
 ﻿using API.Data;
-using API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,15 +8,11 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
-        private readonly DatingAppContext _context;
+       
+        public UsersController(DatingAppContext context) : base(context){
 
-        public UsersController(DatingAppContext context)
-        {
-            _context = context;
         }
 
         [HttpGet]

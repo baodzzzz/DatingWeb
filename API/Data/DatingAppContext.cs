@@ -1,5 +1,4 @@
 ﻿using System;
-using API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -24,7 +23,7 @@ namespace API.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("server=DESKTOP-BTRNF6K; database=DatingApp; uid=sa;password=123456");
             }
         }
@@ -35,7 +34,13 @@ namespace API.Data
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.PasswordHash)
+                    .HasMaxLength(70)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.PasswordSalt)
+                    .HasMaxLength(170)
+                    .IsFixedLength(true);
 
                 entity.Property(e => e.Username).HasMaxLength(50);
             });
