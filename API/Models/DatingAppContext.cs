@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace API.Data
+namespace API.Models
 {
     public partial class DatingAppContext : DbContext
     {
@@ -34,15 +34,21 @@ namespace API.Data
 
             modelBuilder.Entity<User>(entity =>
             {
+                entity.Property(e => e.Id).HasColumnName("id");
                 entity.Property(e => e.PasswordHash)
-                    .HasMaxLength(70)
+                    .HasMaxLength(64)
+                    .HasColumnName("PasswordHash")
                     .IsFixedLength(true);
 
                 entity.Property(e => e.PasswordSalt)
-                    .HasMaxLength(170)
+                    .HasMaxLength(128)
+                    .HasColumnName("passwordSalt")
                     .IsFixedLength(true);
 
-                entity.Property(e => e.Username).HasMaxLength(50);
+                entity.Property(e => e.Username)
+                .HasMaxLength(50)
+                .HasColumnName("userName")
+                .IsFixedLength(true);
             });
 
             OnModelCreatingPartial(modelBuilder);
