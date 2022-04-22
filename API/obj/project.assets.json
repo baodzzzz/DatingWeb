@@ -5530,11 +5530,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Quoc Bao\\Desktop\\Bao\\DatingWeb-master\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\Quoc Bao\\Desktop\\Bao\\DatingApp\\DatingWeb\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Quoc Bao\\Desktop\\Bao\\DatingWeb-master\\API\\API.csproj",
+      "projectPath": "C:\\Users\\Quoc Bao\\Desktop\\Bao\\DatingApp\\DatingWeb\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Quoc Bao\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Quoc Bao\\Desktop\\Bao\\DatingWeb-master\\API\\obj\\",
+      "outputPath": "C:\\Users\\Quoc Bao\\Desktop\\Bao\\DatingApp\\DatingWeb\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Quoc Bao\\AppData\\Roaming\\NuGet\\NuGet.Config",
