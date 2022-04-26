@@ -23,7 +23,10 @@ namespace API.Controllers
             _tokenService = tokenService;
             _context = context;
         }
-
+          public BaseApiController(DatingAppContext context)
+        {
+            _context = context;
+        }
 
     }
 }
